@@ -1,0 +1,131 @@
+
+
+// First Solution (Problem 1 + Problem 2)
+
+ALGORITHM chapitre2
+VAR
+
+    struct_name :	Ensemble
+                        ensemble1 := {3, 1, 7, 9};
+                        ensemble2 := {2, 4, 1, 9, 3};
+                    END_STRUCT
+
+    array := ARRAY_OF Ensemble[5];
+    tab := ARRAY_OF INTEGER [];
+
+BEGIN
+
+ i,j,a,b,c,n,t,y,g,z : INTEGER := 0 ;
+
+ sum_distinct,sum_equal := 0;
+
+
+
+    for i from 0 to (length.(array[0].ensemble1) - 1)  DO
+     for j from 0 to (length.(array[0].ensemble2) - 1)  DO
+
+     IF (array[0].ensemble1[i] = array[0].ensemble2[j]) THEN
+         tab[a] := array[0].ensemble1[i];
+         a := a + 1 ;
+
+     END_IF
+     END_FOR
+     END_FOR
+
+
+
+
+
+   FOR b from 0 to (length.(array[0].ensemble1) - 1) DO
+        for c from 0 to (length.tab - 1) DO
+               IF (tab[c] <> array[0].ensemble1[b]) THEN
+                  n := n + 1; 
+
+                  END_IF
+
+                  IF (n = length.tab) THEN
+                      sum_distinct := sum_distinct + array[0].ensemble1[b]
+                  END_IF
+
+     END_FOR
+     END_FOR
+
+
+
+   FOR t from 0 to (length.(array[0].ensemble2) - 1) DO
+        for y from 0 to (length.tab - 1) DO
+               IF (tab[y] <> array[0].ensemble2[t]) THEN
+                  g := g + 1; 
+
+                  END_IF
+
+                  IF (g = length.tab) THEN
+                      sum_distinct := sum_distinct + array[0].ensemble2[t]
+                  END_IF
+
+     END_FOR
+     END_FOR
+
+
+
+   
+        for z from 0 to (length.tab - 1) DO
+              
+
+                  
+                     sum_equal := sum_equal+ array[0].ensemble1[z]
+                 
+
+     END_FOR
+  
+
+ sum_equal := sum_equal * 2;
+
+
+END
+
+
+
+
+
+
+
+
+// Second Solution (Problem 1 + Problem 2) use hach table
+
+ALGORITHM chapitre2
+VAR
+
+    struct_name :	Ensemble
+                        ensemble1 := {3, 1, 7, 9};
+                        ensemble2 := {2, 4, 1, 9, 3};
+                    END_STRUCT
+
+    array := ARRAY_OF Ensemble[5];
+    tab := ARRAY_OF INTEGER [];
+BEGIN
+
+
+    for i from 0 to (length.(array[0].ensemble1) - 1) DO
+       tab[i] := array[0].ensemble1[i] ;
+
+    END_FOR
+
+
+    for i from (length.(array[0].ensemble1) - 1) to (length.(array[0].ensemble1) + (length.(array[0].ensemble2) - 1) DO
+       tab[i] := array[0].ensemble2[i] ;
+
+    END_FOR
+
+
+
+  
+
+
+
+
+
+
+END
+
+
