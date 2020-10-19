@@ -1,0 +1,30 @@
+ALGORITHM chapitre1
+VAR
+numb_voyel: INTEGER :=0;
+numb_char:  INTEGER :=0;
+numb_mots: INTEGER :=0;
+
+c: CHAR;
+BEGIN
+    whrite ("ecrivez une phrase : ");
+    
+    WHILE (c <> ".") DO
+
+   IF (c <> " ") THEN
+      numb_char := numb_char + 1;
+
+   ELSE_IF (c = " ") THEN
+    numb_mots := numb_mots + 1;
+       
+
+ELSE_IF (isDigit(c)) THEN
+    numb_voyel := numb_voyel + 1 ;
+
+
+   END_IF
+        
+
+    END_WHILE 
+
+
+END
